@@ -40,12 +40,32 @@ class LinkedList{
             this.head = node 
         } else {
             let prev = this.head
-            while(prev.next){
+            while(prev.next){      //Jab tak truthy value ho 
                 prev = prev.next
             }
             prev.next = node
         }
         this.size++
+    }
+
+    insert(value, index){
+        if(index < 0 || index > this.size){
+            return console.log("Invalid Indnex !")
+        }
+        if(index === 0){
+            this.prepend(value)
+        } else{
+            const node = new Node(value)
+            let prev = this.head
+            
+            for(let i = 0; i<index-1; i++){
+                prev = prev.next
+            }
+
+            node.next = prev.next
+            prev.next = node 
+            this.size++
+        }
     }
 
     print(){
@@ -66,9 +86,9 @@ class LinkedList{
 
 const list = new LinkedList()
 
-console.log(`Is list empty: ${list.isEmpty()}`);
-console.log(`List Size: ${list.getSize()}`);
-list.print()
+// console.log(`Is list empty: ${list.isEmpty()}`);
+// console.log(`List Size: ${list.getSize()}`);
+// list.print()
 
 // list.prepend(10)
 // list.print()
@@ -77,14 +97,29 @@ list.print()
 // list.prepend(30)
 // list.print()
 
-list.append(10)
+// list.append(10)
+// list.print()
+
+
+// list.prepend(20)
+// list.prepend(30)
+
+// list.append(20)
+// list.append(30)
+
+// list.print()
+
+list.insert(10,0)
 list.print()
 
-
-list.prepend(20)
-list.prepend(30)
-
-list.append(20)
-list.append(30)
-
+list.insert(20,0)
 list.print()
+
+list.insert(30,1)
+list.print()
+
+list.insert(40,2)
+list.print()
+console.log(list.getSize());
+
+list.insert(50,6)
