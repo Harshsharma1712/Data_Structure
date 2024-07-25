@@ -117,6 +117,26 @@ class LinkedList{
         }
     }
 
+    search(value){
+        if(this.isEmpty()){
+            return console.log("List is empty.");
+        }
+        
+        let index = 0   // variable for countig index
+        
+        let curr = this.head
+
+        while(curr){
+            if(curr.value == value){
+                return console.log(`Element ${value} found in ${index}th index.`);
+            }
+            curr = curr.next
+            index++
+        }
+
+        return console.log("Element is not found in list");
+    }
+
     print(){
         if(this.isEmpty()){
             console.log("List is empty");
@@ -187,4 +207,7 @@ list.print()
 // list.removeValue(20)
 // list.print()
 
-list.removeValue(50)
+// list.removeValue(50)
+
+list.search(30)
+list.search(50)
