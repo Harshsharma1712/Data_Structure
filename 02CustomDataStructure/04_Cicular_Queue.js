@@ -62,4 +62,5 @@ class Queue{
             console.log(str);
         }
     }
+    
 }
