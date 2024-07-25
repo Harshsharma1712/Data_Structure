@@ -43,6 +43,7 @@ queue.print()
 
 console.log("Size of Queue is:"+queue.size());
 
+
 console.log("Element remove by dequeue: "+queue.dequeue());
 console.log("Peek value is: "+queue.peek());
 queue.print()
