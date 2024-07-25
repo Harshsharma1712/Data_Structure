@@ -47,5 +47,6 @@ queue.print()
 
 console.log("Front element remove is: "+queue.dequeue())
 // console.log("Front element remove is: "+queue.dequeue())
+
 queue.print()
 console.log("Front peek value is: "+queue.peek()); 
