@@ -77,7 +77,7 @@ class LinkedList{
             removeNode = this.head
             this.head = this.head.next
         } else{
-            let prev = this.head
+            let prev = this.head   //prev is refernece of previous node that will delted.
             for(let i = 0; i < index - 1; i++){
                 prev = prev.next
             }
@@ -88,6 +88,33 @@ class LinkedList{
         this.size--
         return removeNode.value
 
+    }
+
+    removeValue(value){
+        if(this.isEmpty()){
+            return console.log("List is empty.");
+        } 
+        if(this.head.value === value){
+            this.head = this.head.next
+            this.size--
+            return console.log("Deleted node is: " + value);
+        } else{
+            let prev = this.head
+
+            while(prev.next && prev.next.value !== value){
+                prev = prev.next
+            }
+
+            if(prev.next){
+                const removeNode = prev.next
+                prev.next = removeNode.next
+                this.size--
+                return console.log("Deleted node is: " + value);
+            }
+
+            return console.log("No matchig node found.");
+
+        }
     }
 
     print(){
@@ -151,5 +178,13 @@ list.insert(20,1)
 list.insert(30,2)
 list.insert(40,3)
 
-list.removeFrom(1)
+// list.removeFrom(1)
 list.print()
+
+// list.removeValue(40)
+// list.print()
+
+// list.removeValue(20)
+// list.print()
+
+list.removeValue(50)
