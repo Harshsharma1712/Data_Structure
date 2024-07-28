@@ -137,6 +137,18 @@ class LinkedList{
         return console.log("Element is not found in list");
     }
 
+    reverse(){
+        let curr = null
+        let prev = this.head
+        while(curr){
+            let next = curr.next    //1st Step
+            curr.next = prev        //2nd Step
+            prev = curr             //3rd Step
+            curr = next             //4th Step
+        }
+        this.head = prev
+    }
+
     print(){
         if(this.isEmpty()){
             console.log("List is empty");
@@ -193,13 +205,13 @@ const list = new LinkedList()
 
 // list.insert(50,6)
 
-list.insert(10,0)
-list.insert(20,1)
-list.insert(30,2)
-list.insert(40,3)
+// list.insert(10,0)
+// list.insert(20,1)
+// list.insert(30,2)
+// list.insert(40,3)
 
 // list.removeFrom(1)
-list.print()
+// list.print()
 
 // list.removeValue(40)
 // list.print()
@@ -209,5 +221,15 @@ list.print()
 
 // list.removeValue(50)
 
-list.search(30)
-list.search(50)
+// list.search(30)
+// list.search(50)
+
+// ++++++++++++++++++ Checking reverse method +++++++++++++++++++++++
+
+list.insert(10,0)
+list.insert(20,1)
+list.insert(30,2)
+list.insert(40,3)
+
+list.reverse()
+list.print()
