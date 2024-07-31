@@ -96,16 +96,17 @@ class LinkedList {
 
 
 const list = new LinkedList()
-list.isEmpty()
-list.getSize()
-
-// ********** Inserting element ************
 
 list.append(10)
 list.append(20)
 list.append(30)
-list.prepend(1)
-list.prepend(2)
+list.append(40)
+list.prepend(5)
 
 list.print()
-list.getSize()
+
+list.removeFromEnd()
+list.print()
+
+list.removeFromFront()
+list.print()
