@@ -47,14 +47,18 @@ class LinkedList {
     }
 
     append(value){      //Inserting element in the end of the list.
-        const node = new Node(value)
-        if(this.isEmpty()){
-            this.head = node 
-            this.tail = node
-        } else{
-            this.tail.next = node
-            this.tail = node
-        }
+        const newNode = new Node(value);
+  
+      if (this.tail === null) {
+        // If the list is empty, head and tail will both point to the new node
+        this.head = newNode;
+        this.tail = newNode;
+      } else {
+        // The current tail's next pointer will point to the new node
+        this.tail.next = newNode;
+        // Update the tail to the new node
+        this.tail = newNode;
+      }
         this.size++
     }
 
@@ -97,6 +101,11 @@ list.getSize()
 
 // ********** Inserting element ************
 
+list.append(10)
 list.append(20)
 list.append(30)
-list.prepend(0)
+list.prepend(1)
+list.prepend(2)
+
+list.print()
+list.getSize()
