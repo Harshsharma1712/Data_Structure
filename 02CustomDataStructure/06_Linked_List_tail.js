@@ -13,7 +13,7 @@ class LinkedList {
     }
 
     isEmpty(){
-        return console.log(`Is list Empty: ${this.size === 0}`)
+        return this.size === 0
     }
 
     getSize(){
