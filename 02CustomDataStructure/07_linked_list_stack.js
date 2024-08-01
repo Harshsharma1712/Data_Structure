@@ -13,7 +13,7 @@ class LinkedList {
     }
 
     isEmpty(){
-        return console.log(`Is list Empty: ${this.size === 0}`)
+        return this.size === 0
     }
 
     getSize(){
@@ -98,4 +98,46 @@ class LinkedListStack{
     constructor(){
         this.list = new LinkedList()
     }
+
+    push(value){    //insert element in the starting
+        this.list.prepend(value)
+    }
+
+    pop(){      //remove the last element which is inserted
+        return this.list.removeFromFront()
+    }
+
+    peek(){
+        return console.log(this.list.head.value)
+    }
+
+    isEmpty(){
+        return this.list.isEmpty()
+    }
+
+    getSize(){
+        return this.list.getSize()
+    }
+
+    print(){
+        return this.list.print()
+    }
 }
+
+const stack = new LinkedListStack()
+
+// stack.isEmpty()
+// stack.getSize()
+// stack.print()
+
+stack.push(20)
+stack.push(10)
+stack.push(30)
+
+stack.pop()
+
+stack.print()
+
+stack.peek()
+
+stack.isEmpty()
